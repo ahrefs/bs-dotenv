@@ -1,0 +1,36 @@
+{
+  "name": "@ahrefs/bs-dotenv",
+  "version": "1.0.1",
+  "description": "bucklescript bindings to dotenv",
+  "main": "src/dotenv.bs.js",
+  "repository": "https://github.com/ahrefs/bs-dotenv.git",
+  "author": "Louis Roché <louis.roche@ahrefs.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahrefs/bs-dotenv/issues"
+  },
+  "homepage": "https://github.com/ahrefs/bs-dotenv#readme",
+  "keywords": [
+    "dotenv",
+    "bucklescript",
+    "bsb",
+    "reason",
+    "reasonml",
+    "ocaml",
+    "bs-dotenv",
+    "bs-platform"
+  ],
+  "scripts": {
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
+  },
+  "peerDependencies": {
+    "bs-platform": "^2.1.0",
+    "dotenv": "^5.0.0"
+  },
+  "devDependencies": {
+    "bs-platform": "^2.1.0",
+    "dotenv": "^5.0.0"
+  }
+}
