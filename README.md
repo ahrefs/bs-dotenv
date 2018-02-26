@@ -6,6 +6,12 @@
 ## Installation
 
 ```
+yarn add @ahrefs/bs-dotenv
+```
+
+or to follow master version:
+
+```
 yarn add https://github.com/ahrefs/bs-dotenv.git
 ```
 
