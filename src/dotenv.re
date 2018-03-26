@@ -6,20 +6,20 @@
 type js_config = {
   .
   "path": Js.Nullable.t(string),
-  "encoding": Js.Nullable.t(string)
+  "encoding": Js.Nullable.t(string),
 };
 
 type error = {
   .
   "name": string,
   "message": string,
-  "stack": Js.Nullable.t(string)
+  "stack": Js.Nullable.t(string),
 };
 
 type result = {
   .
   "error": error,
-  "parsed": Js.Dict.t(string)
+  "parsed": Js.Dict.t(string),
 };
 
 [@bs.module "dotenv"]
@@ -27,16 +27,16 @@ external js_config : Js.Nullable.t(js_config) => result = "config";
 
 type config = {
   path: option(string),
-  encoding: option(string)
+  encoding: option(string),
 };
 
 let config = (~cfg=?, ()) =>
-  switch cfg {
+  switch (cfg) {
   | None => js_config(Js.Nullable.undefined)
   | Some(cfg) =>
     let config = {
-      "path": Js.Nullable.from_opt(cfg.path),
-      "encoding": Js.Nullable.from_opt(cfg.encoding)
+      "path": Js.Nullable.fromOption(cfg.path),
+      "encoding": Js.Nullable.fromOption(cfg.encoding),
     };
     Js.Nullable.return(config) |> js_config;
   };
