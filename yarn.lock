@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-bs-platform@^2.1.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.2.1.tgz#e22b82143a43a10630d7b2040aab87648b12190c"
+bs-platform@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.2.3.tgz#d905ae10a5f3621e6a739041dfa0b58483a2174f"
 
-dotenv@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.0.tgz#0206eb5b336639bf377618a2a304ff00c6a1fddb"
+dotenv@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
