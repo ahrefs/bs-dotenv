@@ -39,6 +39,8 @@ let _ =
   Js.log(Node.Process.process##env);
 ```
 
+more examples [here](./examples/)
+
 Add the package as a dependency in `bsconfig.json`.
 
 Run it:
