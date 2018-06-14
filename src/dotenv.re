@@ -30,7 +30,7 @@ type config = {
   encoding: option(string),
 };
 
-let config = (~cfg=?, ()) => 
+let config = (~cfg=?, ()) =>
   switch (cfg) {
   | None => js_config(Js.Nullable.undefined)
   | Some(cfg) => 
