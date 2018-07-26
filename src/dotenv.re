@@ -33,7 +33,7 @@ type config = {
 let config = (~cfg=?, ()) =>
   switch (cfg) {
   | None => js_config(Js.Nullable.undefined)
-  | Some(cfg) =>
+  | Some(cfg) => 
     let config = {
       "path": Js.Nullable.fromOption(cfg.path),
       "encoding": Js.Nullable.fromOption(cfg.encoding),

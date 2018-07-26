@@ -1,7 +1,23 @@
 {
   "name": "@ahrefs/bs-dotenv",
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest"
+  ],
   "sources": [
-    "src"
+    {
+      "dir" : "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "subdirs": true,
+      "type": "dev"
+    },
+    {
+      "dir": "examples",
+      "subdirs": true,
+      "type": "dev"
+    }
   ],
   "package-specs": {
     "module": "commonjs",
@@ -11,5 +27,5 @@
   "bsc-flags": [
     "-bs-super-errors"
   ],
-  "refmt": 3,
+  "refmt": 3
 }
