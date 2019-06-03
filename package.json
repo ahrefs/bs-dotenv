@@ -1,6 +1,6 @@
 {
   "name": "@ahrefs/bs-dotenv",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "bucklescript bindings to dotenv",
   "main": "src/dotenv.bs.js",
   "repository": "https://github.com/ahrefs/bs-dotenv.git",
@@ -28,12 +28,12 @@
     "test": "jest --coverage"
   },
   "peerDependencies": {
-    "bs-platform": "^3.1.4",
-    "dotenv": "^5.0.1"
+    "bs-platform": "^5.0.4",
+    "dotenv": "^8.0.0"
   },
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.4.2",
-    "bs-platform": "^3.1.4",
-    "dotenv": "^5.0.1"
+    "@glennsl/bs-jest": "^0.4.8",
+    "bs-platform": "^5.0.4",
+    "dotenv": "^8.0.0"
   }
 }

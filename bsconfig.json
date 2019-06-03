@@ -1,11 +1,9 @@
 {
   "name": "@ahrefs/bs-dotenv",
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest"
-  ],
+  "bs-dev-dependencies": ["@glennsl/bs-jest"],
   "sources": [
     {
-      "dir" : "src",
+      "dir": "src",
       "subdirs": true
     },
     {
@@ -24,8 +22,6 @@
     "in-source": true
   },
   "suffix": ".bs.js",
-  "bsc-flags": [
-    "-bs-super-errors"
-  ],
+  "bsc-flags": ["-bs-super-errors"],
   "refmt": 3
 }
