@@ -1,6 +1,6 @@
 {
   "name": "@ahrefs/bs-dotenv",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "bucklescript bindings to dotenv",
   "main": "src/dotenv.bs.js",
   "repository": "https://github.com/ahrefs/bs-dotenv.git",
