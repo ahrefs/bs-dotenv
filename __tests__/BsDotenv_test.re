@@ -13,7 +13,7 @@ describe("BuckleScript Dotenv", () => {
 
   test("it should get dotenv config from custom path", () => {
     let options =
-      Some(Dotenv.configInput(~path=Some("./__tests__/.env"), ()));
+      Some(Dotenv.configInput(~path="./__tests__/.env", ()));
 
     let _ = Dotenv.config(~options?, ());
     let nodeEnv = Node.Process.process##env;

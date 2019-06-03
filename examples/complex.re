@@ -1,5 +1,5 @@
-let config = Dotenv.configInput(~path=Some(".env.production"), ());
+let config = Dotenv.configInput(~path=".env.production", ());
 
 let _ = Dotenv.config(~options=?Some(config), ());
 
-let _ = Js.log(Node.Process.process##env);
+let () = Js.log(Node.Process.process##env);

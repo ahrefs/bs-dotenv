@@ -5,7 +5,7 @@ type parseOptions = {debug: option(bool)};
 type parseInput = {
   src: Node.string_buffer,
   [@bs.optional]
-  options: option(parseOptions),
+  options: parseOptions,
 };
 
 type parseOutput = Js.Dict.t(string);
@@ -15,11 +15,11 @@ type parseOutput = Js.Dict.t(string);
 [@bs.deriving abstract]
 type configInput = {
   [@bs.optional]
-  path: option(string),
+  path: string,
   [@bs.optional]
-  encoding: option(string),
+  encoding: string,
   [@bs.optional]
-  debug: option(bool),
+  debug: bool,
 };
 
 [@bs.deriving abstract]
