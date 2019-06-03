@@ -2,18 +2,6 @@
 type parseOptions = {debug: option(bool)};
 
 [@bs.module "dotenv"]
-external parseString:
-  (~src: string, ~options: parseOptions=?, unit) =>
-  Js.Dict.t(string) =
-  "parse";
-
-[@bs.module "dotenv"]
-external parseBuffer:
-  (~src: Node.buffer, ~options: parseOptions=?, unit) =>
-  Js.Dict.t(string) =
-  "parse";
-
-[@bs.module "dotenv"]
 external parse:
   (
     ~src: [@bs.unwrap] [ | `Str(string) | `Buffer(Node.buffer)],

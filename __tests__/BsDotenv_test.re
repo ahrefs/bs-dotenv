@@ -47,18 +47,6 @@ describe("BuckleScript Dotenv", () => {
     expect(basicValue) |> toEqual(expectedBasicValue);
   });
 
-  test("parseString can read a string", () => {
-    let env = Dotenv.parseString(~src=dotenv_example, ());
-    let basicValue = Js.Dict.get(env, "BASIC");
-    expect(basicValue) |> toEqual(expectedBasicValue);
-  });
-
-  test("parseBuffer can read a buffer", () => {
-    let env = Dotenv.parseBuffer(~src=dotenv_example_buffer, ());
-    let basicValue = Js.Dict.get(env, "BASIC");
-    expect(basicValue) |> toEqual(expectedBasicValue);
-  });
-
   test("parse can read a string", () => {
     let env = Dotenv.parse(~src=`Str(dotenv_example), ());
     let basicValue = Js.Dict.get(env, "BASIC");
