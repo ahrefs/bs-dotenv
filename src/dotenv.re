@@ -1,48 +1,34 @@
-/**
- * Bindings to dotenv
- * https://www.npmjs.com/package/dotenv
- * https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/dotenv/index.d.ts
- */
-type js_config = {
-  .
-  "path": Js.Nullable.t(string),
-  "encoding": Js.Nullable.t(string),
+[@bs.deriving abstract]
+type parseOptions = {debug: option(bool)};
+
+[@bs.deriving abstract]
+type parseInput = {
+  src: Node.string_buffer,
+  [@bs.optional]
+  options: option(parseOptions),
 };
 
-type error = {
-  .
-  "name": string,
-  "message": string,
-  "stack": Js.Nullable.t(string),
-};
+type parseOutput = Js.Dict.t(string);
 
-type result = {
-  .
-  "error": error,
-  "parsed": Js.Dict.t(string),
-};
+[@bs.module "dotenv"] external parse: parseInput => parseOutput = "parse";
 
-[@bs.module "dotenv"]
-external js_config : Js.Nullable.t(js_config) => result = "config";
-
-type config = {
+[@bs.deriving abstract]
+type configInput = {
+  [@bs.optional]
   path: option(string),
+  [@bs.optional]
   encoding: option(string),
+  [@bs.optional]
+  debug: option(bool),
 };
 
-let config = (~cfg=?, ()) =>
-  switch (cfg) {
-  | None => js_config(Js.Nullable.undefined)
-  | Some(cfg) => 
-    let config = {
-      "path": Js.Nullable.fromOption(cfg.path),
-      "encoding": Js.Nullable.fromOption(cfg.encoding),
-    };
-    Js.Nullable.return(config) |> js_config;
-  };
+[@bs.deriving abstract]
+type configOutput = {
+  error: option(Js.Exn.t),
+  parsed: option(Js.Dict.t(string)),
+};
 
 [@bs.module "dotenv"]
-external parseString : string => Js.Dict.t(string) = "parse";
+external config: option(configInput) => configOutput = "config";
 
-[@bs.module "dotenv"]
-external parseBuffer : Node.Buffer.t => Js.Dict.t(string) = "parse";
+let config = (~options: option(configInput)=?, ()) => config(options);
