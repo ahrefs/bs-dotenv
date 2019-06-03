@@ -1,16 +1,27 @@
 [@bs.deriving abstract]
 type parseOptions = {debug: option(bool)};
 
-[@bs.deriving abstract]
-type parseInput = {
-  src: Node.string_buffer,
-  [@bs.optional]
-  options: parseOptions,
-};
+[@bs.module "dotenv"]
+external parseString:
+  (~src: string, ~options: parseOptions=?, unit) =>
+  Js.Dict.t(string) =
+  "parse";
 
-type parseOutput = Js.Dict.t(string);
+[@bs.module "dotenv"]
+external parseBuffer:
+  (~src: Node.buffer, ~options: parseOptions=?, unit) =>
+  Js.Dict.t(string) =
+  "parse";
 
-[@bs.module "dotenv"] external parse: parseInput => parseOutput = "parse";
+[@bs.module "dotenv"]
+external parse:
+  (
+    ~src: [@bs.unwrap] [ | `Str(string) | `Buffer(Node.buffer)],
+    ~options: parseOptions=?,
+    unit
+  ) =>
+  Js.Dict.t(string) =
+  "parse";
 
 [@bs.deriving abstract]
 type configInput = {
@@ -29,6 +40,5 @@ type configOutput = {
 };
 
 [@bs.module "dotenv"]
-external config: option(configInput) => configOutput = "config";
-
-let config = (~options: option(configInput)=?, ()) => config(options);
+external config: (~options: configInput=?, unit) => configOutput =
+  "config";
